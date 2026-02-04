@@ -10,3 +10,6 @@ clean_df <- subset(clean_df, subset = clean_df$q6 == 1) #removed 3 failed attent
 
 # Analysis
 clean_df$timeSpent <- difftime(time1 = clean_df$timeEnd, time2 = clean_df$timeStart, units = "secs")
+# Need to go back to this analysis
+frequency_tables_list <- lapply(clean_df[,5:14], table)
+lapply(frequency_tables_list, barplot)
